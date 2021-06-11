@@ -1,1 +1,1 @@
-# GTMK-GameJam-2021
+# GMTK-GameJam-2021
