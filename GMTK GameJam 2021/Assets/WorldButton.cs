@@ -30,7 +30,7 @@ public class WorldButton : MonoBehaviour
         if(pressed != lastFramePressed)
         {
             OnStateChange.Invoke(pressed);
-            Debug.Log(pressed);
+            
             if (pressed)
             {
                 sr.sprite = pressedSprite;
