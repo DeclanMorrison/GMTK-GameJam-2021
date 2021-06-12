@@ -102,6 +102,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5545401956839120077, guid: 59df1580a3e561f62af5206894beed1a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 709ea1ff1391b4f2d9649aa4e788a44e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59df1580a3e561f62af5206894beed1a, type: 3}
 --- !u!4 &6931112680833551138 stripped
@@ -160,6 +164,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6390812423526448853, guid: 744dcc2b6a30dead684d3df73c6d9605, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3c47a1e420c5861c2a83d841b6835155, type: 3}
     - target: {fileID: 6390812423526448859, guid: 744dcc2b6a30dead684d3df73c6d9605, type: 3}
       propertyPath: m_Name
       value: Prime Dimension Crate
