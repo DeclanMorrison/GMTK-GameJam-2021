@@ -57,14 +57,14 @@ public class CrateDragging : MonoBehaviour
                     grabbedObject = collision.gameObject.transform.parent.gameObject;
                     foreach (Rigidbody2D rigidbody2D in grabbedObject.GetComponentsInChildren<Rigidbody2D>())
                     {
-                        rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+                        Destroy(rigidbody2D);
                     }
                 }
                 else
                 {
                     grabbedObject = collision.gameObject;
                     Rigidbody2D rigidbody2D = grabbedObject.GetComponent<Rigidbody2D>();
-                    rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+                    Destroy(rigidbody2D);
                 }
                 grabbedObject.transform.SetParent(gameObject.transform);
                 isGrabbing = true;
@@ -76,13 +76,20 @@ public class CrateDragging : MonoBehaviour
     void DropGrabbed()
     {
         grabbedObject.transform.parent = null;
-        foreach (Rigidbody2D rigidbody2D in grabbedObject.GetComponents<Rigidbody2D>())
+        if (grabbedObject.GetComponent<LinkedPhysics>() != null)
         {
-            rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            foreach (Transform child in grabbedObject.transform) 
+            {
+                Rigidbody2D rb2d = child.gameObject.AddComponent<Rigidbody2D>();
+                rb2d.drag = 25;
+                rb2d.freezeRotation = true;
+            }
         }
-        foreach (Rigidbody2D rigidbody2D in grabbedObject.GetComponentsInChildren<Rigidbody2D>())
+        else
         {
-            rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            Rigidbody2D rb2d = grabbedObject.AddComponent<Rigidbody2D>();
+            rb2d.drag = 25;
+            rb2d.freezeRotation = true;
         }
         grabbedObject = null;
         isGrabbing = false;
