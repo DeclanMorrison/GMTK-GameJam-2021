@@ -41,7 +41,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.77160263, y: 0.0017017722}
@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 6692427419161046932}
   - component: {fileID: 6692427419161046937}
   - component: {fileID: 1387460388417291413}
+  - component: {fileID: 1951633767981523514}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -182,6 +183,7 @@ MonoBehaviour:
   decel: 5
   inputX: P2X
   inputY: P2Y
+  facingRight: 1
 --- !u!61 &1387460388417291413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,6 +210,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1951633767981523514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692427419161046933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa91b4640516c5ca8729b6dcab28ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabKey: 101
+  leftCollider: {fileID: 1644905759951577814}
+  rightCollider: {fileID: 2616268676714447276}
+  interactableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8921557336866158284
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +269,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.7314975, y: 0.0017017722}
