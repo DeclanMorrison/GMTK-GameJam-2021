@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public SuperPositionState superPositionState = SuperPositionState.TOGETHER;
     public static GameManager instance;
     GlitchEffects[] glitches;
+    AudioSource glitchingSound;
 
     void Awake() 
     {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         glitches = GetComponentsInChildren<GlitchEffects>();
+        glitchingSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SplitDimensions()
     {
+        glitchingSound.Play();
         // Glitching Effect
         foreach (GlitchEffects glitch in glitches) 
         {
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator JoinDimensions()
     {
+        glitchingSound.Play();
         // Glitching Effect
         foreach (GlitchEffects glitch in glitches) 
         {
