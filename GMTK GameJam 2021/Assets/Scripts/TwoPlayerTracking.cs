@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TwoPlayerTracking : MonoBehaviour
 {
-    public GameObject player1;
-    public GameObject player2;
     public float zoomFactor = 1;
+    
+    GameObject player1;
+    GameObject player2;
 
     Camera cam; 
     float initialCameraSize;
@@ -14,6 +15,8 @@ public class TwoPlayerTracking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player1 = GameManager.instance.player1;
+        player2 = GameManager.instance.player2;
         cam = GetComponent<Camera>();
         initialCameraSize = cam.orthographicSize;
     }

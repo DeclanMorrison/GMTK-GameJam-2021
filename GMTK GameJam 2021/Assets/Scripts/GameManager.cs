@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject player1;
+    public GameObject player2;
+
     public Camera primeCamera;
     public Camera frozenCamera;
     public Camera overgrowthCamera;
@@ -12,10 +15,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     GlitchEffects[] glitches;
 
+    void Awake() 
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
         glitches = GetComponentsInChildren<GlitchEffects>();
     }
 

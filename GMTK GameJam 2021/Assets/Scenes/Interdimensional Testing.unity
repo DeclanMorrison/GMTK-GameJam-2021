@@ -203,7 +203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378169425
 GameObject:
@@ -285,7 +285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1709416085 stripped
 GameObject:
@@ -304,8 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b732434b0422cd9dbd1c2898e373352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 1378169425}
-  player2: {fileID: 947582250}
   zoomFactor: 1
 --- !u!1 &1881739202
 GameObject:
@@ -440,6 +438,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4687844976592993566, guid: 19089dbd83a85d67ea332f1df414fb94, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1378169425}
+    - target: {fileID: 4687844976592993566, guid: 19089dbd83a85d67ea332f1df414fb94, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 947582250}
     - target: {fileID: 4687844976592993567, guid: 19089dbd83a85d67ea332f1df414fb94, type: 3}
       propertyPath: m_Name
       value: GameManager
