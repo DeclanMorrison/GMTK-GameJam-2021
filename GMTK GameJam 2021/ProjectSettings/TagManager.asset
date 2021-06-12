@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dragable
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Prime
   - Frozen
   - Overgrowth
-  - 
+  - DetectionField
   - 
   - 
   - 
@@ -41,6 +42,18 @@ TagManager:
   - name: Floor
     uniqueID: 3829788239
     locked: 0
+  - name: Objects
+    uniqueID: 2911631261
+    locked: 0
+  - name: Walls
+    uniqueID: 1024237221
+    locked: 0
+  - name: Players
+    uniqueID: 2128592233
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 4274142985
     locked: 0

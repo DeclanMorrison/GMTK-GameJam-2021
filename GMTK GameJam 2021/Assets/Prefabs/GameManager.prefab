@@ -727,6 +727,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4687844976592993565}
     m_Modifications:
+    - target: {fileID: 1951633767981523514, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: grabKey
+      value: 305
+      objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046933, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_Name
       value: Overgrowth Player
