@@ -175,6 +175,7 @@ MonoBehaviour:
   frozenPlayer: {fileID: 2156895935434147971}
   overgrowthPlayer: {fileID: 2156895935277325703}
   splitDistance: 10
+  splitIndicatorMargin: 5
   primeCamera: {fileID: 4687844976984708984}
   frozenCamera: {fileID: 4687844976782116114}
   overgrowthCamera: {fileID: 4687844975741792717}
@@ -653,11 +654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1365278
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.74794143
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_LocalPosition.z
@@ -702,6 +703,10 @@ PrefabInstance:
     - target: {fileID: 6692427419161046939, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_Color.r
       value: 0.2615877
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228644164979070803, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
