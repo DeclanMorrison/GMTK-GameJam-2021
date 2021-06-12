@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject player1;
-    public GameObject player2;
+    public GameObject frozenPlayer;
+    public GameObject overgrowthPlayer;
+
+    public float splitDistance = 1;
 
     public Camera primeCamera;
     public Camera frozenCamera;
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour
     GlitchEffects[] glitches;
     AudioSource glitchingSound;
 
+    Rect CAMERA_POSITION_LEFT = new Rect(0, 0, 0.5f, 1);
+    Rect CAMERA_POSITION_RIGHT = new Rect(0.5f, 0, 0.5f, 1); 
     void Awake() 
     {
         instance = this;
@@ -31,17 +35,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        CheckSplit();
+    }
+
+    void CheckSplit() {
+        Vector2 distance = frozenPlayer.transform.position - overgrowthPlayer.transform.position;
+        if (superPositionState == SuperPositionState.TOGETHER && distance.magnitude > splitDistance) 
         {
-            if (superPositionState == SuperPositionState.TOGETHER) 
-            {
-                StartCoroutine("SplitDimensions");
-            }
-            else
-            {
-                StartCoroutine("JoinDimensions");
-            }
-        } 
+            StartCoroutine("SplitDimensions");
+        }
+        else if (superPositionState == SuperPositionState.SPLIT && distance.magnitude < splitDistance)
+        {
+            StartCoroutine("JoinDimensions");
+        }
     }
 
     IEnumerator SplitDimensions()
@@ -68,11 +74,23 @@ public class GameManager : MonoBehaviour
             glitch.flipIntensity = 0;
             glitch.enabled = false;
         }
-
+        // Check camera side
+        if (frozenPlayer.transform.position.x < overgrowthCamera.transform.position.x)
+        {
+            frozenCamera.rect = CAMERA_POSITION_LEFT;
+            overgrowthCamera.rect = CAMERA_POSITION_RIGHT;
+        }
+        else {
+            frozenCamera.rect = CAMERA_POSITION_RIGHT;
+            overgrowthCamera.rect = CAMERA_POSITION_LEFT;
+        }
         // Switch Cameras
         primeCamera.enabled = false;
         frozenCamera.enabled = true;
         overgrowthCamera.enabled = true;
+        // Set player dimension layers
+        frozenPlayer.layer = LayerMask.NameToLayer("Frozen");
+        overgrowthPlayer.layer = LayerMask.NameToLayer("Overgrowth");
         // Set new superposition state
         superPositionState = SuperPositionState.SPLIT;
     }
@@ -106,6 +124,9 @@ public class GameManager : MonoBehaviour
         primeCamera.enabled = true;
         frozenCamera.enabled = false;
         overgrowthCamera.enabled = false;
+        // Set player dimension layers
+        frozenPlayer.layer = LayerMask.NameToLayer("Prime");
+        overgrowthPlayer.layer = LayerMask.NameToLayer("Prime");
         // Set new superposition state
         superPositionState = SuperPositionState.TOGETHER;
     }

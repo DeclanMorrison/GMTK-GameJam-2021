@@ -15,8 +15,8 @@ public class TwoPlayerTracking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player1 = GameManager.instance.player1;
-        player2 = GameManager.instance.player2;
+        player1 = GameManager.instance.frozenPlayer;
+        player2 = GameManager.instance.overgrowthPlayer;
         cam = GetComponent<Camera>();
         initialCameraSize = cam.orthographicSize;
     }
