@@ -7,3 +7,8 @@ public enum DimensionTag {
     OVERGROWTH,
     PRIME
 }
+
+public enum SuperPositionState {
+    TOGETHER,
+    SPLIT
+}
