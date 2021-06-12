@@ -632,6 +632,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4687844976592993565}
     m_Modifications:
+    - target: {fileID: -7035543462264330740, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 2156895935277325703}
     - target: {fileID: 6692427419161046933, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_Name
       value: Frozen Player
@@ -654,11 +658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1365278
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.74794143
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_LocalPosition.z
@@ -704,6 +708,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.2615877
       objectReference: {fileID: 0}
+    - target: {fileID: 8228644164979070803, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
 --- !u!1 &2156895935434147971 stripped
@@ -723,9 +731,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4687844976592993565}
     m_Modifications:
+    - target: {fileID: -7035543462264330740, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 2156895935434147971}
     - target: {fileID: 1951633767981523514, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: grabKey
       value: 305
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683925550288189804, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: grabKey
+      value: 303
       objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046933, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_Name
