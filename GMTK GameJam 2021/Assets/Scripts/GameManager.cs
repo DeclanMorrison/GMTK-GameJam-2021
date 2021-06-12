@@ -24,12 +24,10 @@ public class GameManager : MonoBehaviour
         {
             if (superPositionState == SuperPositionState.TOGETHER) 
             {
-                superPositionState = SuperPositionState.SPLIT;
                 SplitDimensions();
             }
             else
             {
-                superPositionState = SuperPositionState.TOGETHER;
                 JoinDimensions();
             }
         } 
@@ -40,6 +38,7 @@ public class GameManager : MonoBehaviour
         primeCamera.enabled = false;
         frozenCamera.enabled = true;
         overgrowthCamera.enabled = true;
+        superPositionState = SuperPositionState.SPLIT;
     }
 
     void JoinDimensions()
@@ -47,5 +46,6 @@ public class GameManager : MonoBehaviour
         primeCamera.enabled = true;
         frozenCamera.enabled = false;
         overgrowthCamera.enabled = false;
+        superPositionState = SuperPositionState.TOGETHER;
     }
 }
