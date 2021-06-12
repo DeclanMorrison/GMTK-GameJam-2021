@@ -101,7 +101,7 @@ MonoBehaviour:
       m_Calls: []
   interactableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   detectionField: {fileID: 5694893514202946596}
   pressed: 0
   unPressedSprite: {fileID: -671563004985865426, guid: 0df5b4034eb759842955e20c89f7cea1, type: 3}
@@ -147,7 +147,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class WorldButton : MonoBehaviour
 {
     public UnityEvent<bool> OnStateChange = new UnityEvent<bool>();
-
+ 
     public LayerMask interactableLayers;
     private ContactFilter2D interactableFilter;
     public Collider2D detectionField;
@@ -30,6 +30,7 @@ public class WorldButton : MonoBehaviour
         if(pressed != lastFramePressed)
         {
             OnStateChange.Invoke(pressed);
+            Debug.Log(pressed);
             if (pressed)
             {
                 sr.sprite = pressedSprite;
@@ -40,7 +41,7 @@ public class WorldButton : MonoBehaviour
             }
         }
 
-        pressed = lastFramePressed;
+        lastFramePressed = pressed;
     }
 
 
