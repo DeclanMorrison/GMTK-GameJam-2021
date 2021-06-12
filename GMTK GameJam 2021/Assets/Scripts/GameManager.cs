@@ -47,12 +47,10 @@ public class GameManager : MonoBehaviour
 
         if (superPositionState == SuperPositionState.TOGETHER)
         {
-            Debug.Log(-distance.magnitude);
             distanceIndicator.pitch = MapDistanceToPitch(-distance.magnitude, splitDistance, -(splitDistance - splitIndicatorMargin), 3f, 0f);
         } 
         else if ( superPositionState == SuperPositionState.SPLIT)
         {
-            Debug.Log(distance.magnitude);
             distanceIndicator.pitch = MapDistanceToPitch(distance.magnitude, splitDistance, (splitDistance + splitIndicatorMargin), 3f, 0f);
         }
 

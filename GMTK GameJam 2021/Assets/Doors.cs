@@ -6,18 +6,17 @@ using System;
 public class Doors : MonoBehaviour
 {
     public bool open;
-    public List<WorldButton> requiredButtons;
+    private Animator anim;
     public Collider2D doorColider;
+    public List<WorldButton> requiredButtons;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SetState(!open);
-        }
-
-        if(requiredButtons.Count != 0) { open = checkRequiredButtons(); }
-        
+        if(requiredButtons.Count != 0) { SetState(checkRequiredButtons()); }
     }
 
     void SetState(bool open)
@@ -25,6 +24,7 @@ public class Doors : MonoBehaviour
         if (open == this.open) { return; }
 
         this.open = open;
+        anim.SetBool("Open", open);
         if (open)
         {
             doorColider.enabled = false;
