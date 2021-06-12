@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 5;
     public float accel = 5;
     public float decel = 5;
+    public string inputX = "P1X";
+    public string inputY = "P1Y";
     private Vector2 moveDir
     {
         get
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 inputs = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Vector2 inputs = new Vector2(Input.GetAxisRaw(inputX), Input.GetAxisRaw(inputY)).normalized;
 
 
         rb.velocity = inputs * maxSpeed;
