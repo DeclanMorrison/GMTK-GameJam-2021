@@ -66,8 +66,6 @@ public class GameManager : MonoBehaviour
 
     float MapDistanceToPitch(float value, float from1, float to1, float from2, float to2)
     {
-        // when split, if distance is greater than to1, set pitch to 0
-        // when together, if distance is greater than -2.5, set pitch to 0
         if (value > to1) return 0f;
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
