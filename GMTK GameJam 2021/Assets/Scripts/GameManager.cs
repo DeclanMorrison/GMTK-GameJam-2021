@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     public GameObject frozenPlayer;
     public GameObject overgrowthPlayer;
 
-    public float splitDistance = 1;
+    public float splitDistance = 1f;
+
+    public float splitIndicatorMargin = 5f;
 
     public Camera primeCamera;
     public Camera frozenCamera;
@@ -16,7 +18,9 @@ public class GameManager : MonoBehaviour
     public SuperPositionState superPositionState = SuperPositionState.TOGETHER;
     public static GameManager instance;
     GlitchEffects[] glitches;
-    AudioSource glitchingSound;
+    public AudioSource glitchingSound;
+    public AudioSource distanceIndicator;
+
 
     Rect CAMERA_POSITION_LEFT = new Rect(0, 0, 0.5f, 1);
     Rect CAMERA_POSITION_RIGHT = new Rect(0.5f, 0, 0.5f, 1); 
@@ -29,7 +33,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         glitches = GetComponentsInChildren<GlitchEffects>();
-        glitchingSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,8 +41,21 @@ public class GameManager : MonoBehaviour
         CheckSplit();
     }
 
-    void CheckSplit() {
+    void CheckSplit() 
+    {
         Vector2 distance = frozenPlayer.transform.position - overgrowthPlayer.transform.position;
+
+        if (superPositionState == SuperPositionState.TOGETHER)
+        {
+            Debug.Log(-distance.magnitude);
+            distanceIndicator.pitch = MapDistanceToPitch(-distance.magnitude, splitDistance, -(splitDistance - splitIndicatorMargin), 3f, 0f);
+        } 
+        else if ( superPositionState == SuperPositionState.SPLIT)
+        {
+            Debug.Log(distance.magnitude);
+            distanceIndicator.pitch = MapDistanceToPitch(distance.magnitude, splitDistance, (splitDistance + splitIndicatorMargin), 3f, 0f);
+        }
+
         if (superPositionState == SuperPositionState.TOGETHER && distance.magnitude > splitDistance) 
         {
             StartCoroutine("SplitDimensions");
@@ -48,6 +64,14 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine("JoinDimensions");
         }
+    }
+
+    float MapDistanceToPitch(float value, float from1, float to1, float from2, float to2)
+    {
+        // when split, if distance is greater than to1, set pitch to 0
+        // when together, if distance is greater than -2.5, set pitch to 0
+        if (value > to1) return 0f;
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
 
     IEnumerator SplitDimensions()
