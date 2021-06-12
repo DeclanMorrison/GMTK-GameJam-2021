@@ -24,7 +24,7 @@ public class CrateDragging : MonoBehaviour
     void Update()
     {
         // Make sure we can only interact with current dimension
-        interactableLayers = ~(1 << gameObject.layer);
+        interactableLayers = (1 << gameObject.layer);
         interactableFilter.SetLayerMask(interactableLayers);
         if (!isGrabbing)
         {
