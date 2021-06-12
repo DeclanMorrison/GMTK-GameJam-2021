@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 535696268640756523}
   - component: {fileID: 3312961092419376442}
   - component: {fileID: 8263744877616464299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prime Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2289079728009902620}
   - component: {fileID: 7887141450727610591}
   - component: {fileID: 3717690295332744404}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Frozen Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
