@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float decel = 5;
     public string inputX = "P1X";
     public string inputY = "P1Y";
+    public bool facingRight = true;
     private Vector2 moveDir
     {
         get
@@ -34,10 +35,12 @@ public class PlayerMovement : MonoBehaviour
         if(inputs.x > 0)
         {
             sr.flipX = false;
+            facingRight = true;
         }
         else if(inputs.x < 0)
         {
             sr.flipX = true;
+            facingRight = false;
         }
     }                                                  
 }                                                      

@@ -175,6 +175,7 @@ MonoBehaviour:
   frozenPlayer: {fileID: 2156895935434147971}
   overgrowthPlayer: {fileID: 2156895935277325703}
   splitDistance: 10
+  splitIndicatorMargin: 5
   primeCamera: {fileID: 4687844976984708984}
   frozenCamera: {fileID: 4687844976782116114}
   overgrowthCamera: {fileID: 4687844975741792717}
@@ -722,6 +723,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4687844976592993565}
     m_Modifications:
+    - target: {fileID: 1951633767981523514, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: grabKey
+      value: 305
+      objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046933, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_Name
       value: Overgrowth Player
