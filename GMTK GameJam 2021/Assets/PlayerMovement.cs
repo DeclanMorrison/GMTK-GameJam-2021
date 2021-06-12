@@ -26,12 +26,8 @@ public class PlayerMovement : MonoBehaviour
         Vector2 inputs = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
 
-        if(inputs.x == 0)
-        {
-            rb.velocity += new Vector2(-moveDir.x * decel, 0);
-        }
+        rb.velocity = inputs * maxSpeed;
 
-        rb.velocity += inputs * accel * Time.deltaTime;
 
         
     }                                                  
