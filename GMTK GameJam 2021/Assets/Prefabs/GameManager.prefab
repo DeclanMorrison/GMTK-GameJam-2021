@@ -739,6 +739,10 @@ PrefabInstance:
       propertyPath: grabKey
       value: 305
       objectReference: {fileID: 0}
+    - target: {fileID: 5683925550288189804, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+      propertyPath: grabKey
+      value: 303
+      objectReference: {fileID: 0}
     - target: {fileID: 6692427419161046933, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
       propertyPath: m_Name
       value: Overgrowth Player
