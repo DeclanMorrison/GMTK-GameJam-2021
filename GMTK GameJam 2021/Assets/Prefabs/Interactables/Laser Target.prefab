@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8444373164549407479}
   - component: {fileID: 8444373164549407478}
   - component: {fileID: 8440483600045352099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laser Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8444373165114403605}
   - component: {fileID: 8444373165114403606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shell Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
