@@ -34,8 +34,13 @@ public class ElectricityRotation : MonoBehaviour
     float MapDistanceToParticleCount(float value, float from1, float to1, float from2, float to2)
     {
         float particleCount = (value - from1) / (to1 - from1) * (to2 - from2) + from2;
-        return particleCount <= 0 ? 1 : particleCount;
-
+        if (particleCount <= 0) {
+            return 1;
+        } else if (particleCount >= 10) {
+            return 10;
+        } else {
+            return particleCount;
+        }
     }
 
     float GetAngleToOtherPlayer()
