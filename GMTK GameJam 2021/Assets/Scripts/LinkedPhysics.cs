@@ -17,13 +17,13 @@ public class LinkedPhysics : MonoBehaviour
     {
         if (GameManager.instance.superPositionState == SuperPositionState.TOGETHER)
         {
-            primeObject.enabled = true;
-            splitObject.enabled = false;
+            primeObject.isTrigger = false;
+            splitObject.isTrigger = true;
         }
         else
         {
-            primeObject.enabled = false;
-            splitObject.enabled = true;
+            primeObject.isTrigger = true;
+            splitObject.isTrigger = false;
         } 
     }
 }
