@@ -185,7 +185,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -611,7 +611,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -785,7 +785,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -990,14 +990,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
---- !u!4 &2156895935434147980 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
-  m_PrefabInstance: {fileID: 4687844977351649046}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2156895935434147971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6692427419161046933, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+  m_PrefabInstance: {fileID: 4687844977351649046}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2156895935434147980 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
   m_PrefabInstance: {fileID: 4687844977351649046}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4687844977594462738
@@ -1085,13 +1085,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
---- !u!4 &2156895935277325704 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
-  m_PrefabInstance: {fileID: 4687844977594462738}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2156895935277325703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6692427419161046933, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
+  m_PrefabInstance: {fileID: 4687844977594462738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2156895935277325704 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6692427419161046938, guid: cf7588b920bb26b19927fa49dd152888, type: 3}
   m_PrefabInstance: {fileID: 4687844977594462738}
   m_PrefabAsset: {fileID: 0}
