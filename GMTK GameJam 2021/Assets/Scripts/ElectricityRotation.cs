@@ -20,8 +20,6 @@ public class ElectricityRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // electricityParticles.transform.rotation;
-        Debug.Log(name + GetAngleToOtherPlayer());
         electricityParticles.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, GetAngleToOtherPlayer() - 180));
         otherElectricityParticles.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, GetAngleToOtherPlayer() - 180));
         
