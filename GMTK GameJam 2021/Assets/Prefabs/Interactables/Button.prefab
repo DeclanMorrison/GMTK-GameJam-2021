@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5694893512462707829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5754294, y: 0.27926517, z: 0}
+  m_LocalPosition: {x: -5.5, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5694893514202946599}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -1383336035
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -671563004985865426, guid: 0df5b4034eb759842955e20c89f7cea1, type: 3}
+  m_Sprite: {fileID: 5309878863005217198, guid: 56f19cb86eb07804fbacb06e50baa4e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,13 +99,10 @@ MonoBehaviour:
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
-  interactableLayers:
-    serializedVersion: 2
-    m_Bits: 64
   detectionField: {fileID: 5694893514202946596}
   pressed: 0
-  unPressedSprite: {fileID: -671563004985865426, guid: 0df5b4034eb759842955e20c89f7cea1, type: 3}
-  pressedSprite: {fileID: -2954501241907067017, guid: 0df5b4034eb759842955e20c89f7cea1, type: 3}
+  unPressedSprite: {fileID: 5309878863005217198, guid: 56f19cb86eb07804fbacb06e50baa4e6, type: 3}
+  pressedSprite: {fileID: -9134523108133503708, guid: 56f19cb86eb07804fbacb06e50baa4e6, type: 3}
 --- !u!1 &5694893514202946597
 GameObject:
   m_ObjectHideFlags: 0

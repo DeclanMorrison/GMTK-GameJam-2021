@@ -26,7 +26,10 @@ public class GameManager : MonoBehaviour
 
 
     Rect CAMERA_POSITION_LEFT = new Rect(0, 0, 0.5f, 1);
-    Rect CAMERA_POSITION_RIGHT = new Rect(0.5f, 0, 0.5f, 1); 
+    Rect CAMERA_POSITION_RIGHT = new Rect(0.5f, 0, 0.5f, 1);
+
+    private float restartHoldTime = .4f;
+    private float restartHoldTimeCounter = 0;
     void Awake() 
     {
         instance = this;
@@ -41,6 +44,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.R)){
+            restartHoldTimeCounter += Time.deltaTime;
+            if(restartHoldTimeCounter >= restartHoldTime){
+                StartCoroutine("RestartGame");
+                restartHoldTimeCounter = 0;
+            }
+        } else if (Input.GetKeyUp(KeyCode.R)){
+            restartHoldTimeCounter = 0;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();
         }
