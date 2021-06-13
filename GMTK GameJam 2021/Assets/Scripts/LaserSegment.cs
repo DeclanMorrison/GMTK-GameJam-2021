@@ -38,6 +38,11 @@ public class LaserSegment : MonoBehaviour
         Vector2 laserOffsetPoint = pos + (hit2D.point - pos) * ((hit2D.point - pos).magnitude - 0.05f) / (hit2D.point - pos).magnitude;
         if (hit2D)
         {
+            // Trigger any lasering effects on other objects
+            if (hit2D.transform.tag != "Dragable") // Make sure we don't hit players in a mean way
+            {
+                hit2D.transform.gameObject.SendMessage("OnHitByLaser", SendMessageOptions.DontRequireReceiver);
+            }
             Draw2DRay(transform.position, laserOffsetPoint);
             // If we have any children lasers
             if (childLaser != null){

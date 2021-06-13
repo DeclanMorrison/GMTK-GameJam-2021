@@ -153,4 +153,9 @@ public class PlayerLogic : MonoBehaviour
         return false;
     }
 
+    public void OnHitByLaser()
+    {
+        GameManager.instance.GlitchToDeath();
+    }
+
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -150,4 +151,36 @@ public class GameManager : MonoBehaviour
         // Set new superposition state
         superPositionState = SuperPositionState.TOGETHER;
     }
+
+    public void GlitchToDeath()
+    {
+        StartCoroutine("RestartGame");
+    }
+
+    IEnumerator RestartGame() {
+        glitchingSound.Play();
+        // Glitching Effect
+        foreach (GlitchEffects glitch in glitches) 
+        {
+            glitch.enabled = true;
+        }
+    
+        for (float ft = 0f; ft <= 5; ft += 0.1f)
+        {
+            foreach (GlitchEffects glitch in glitches) 
+            {
+                glitch.colorIntensity = ft;
+                glitch.flipIntensity = ft;
+            }
+            yield return new WaitForSeconds(.00001f);
+        }
+        foreach (GlitchEffects glitch in glitches) 
+        {
+            glitch.colorIntensity = 0;
+            glitch.flipIntensity = 0;
+            glitch.enabled = false;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
 }
