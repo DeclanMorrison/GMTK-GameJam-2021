@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.77160263, y: 0.0017017722}
+  m_Offset: {x: -0.4, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.54688835, y: 1.0034035}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &3390431371682944951
 GameObject:
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.74991584, y: 0.0017017722}
+  m_Offset: {x: 0.4, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5052538, y: 1.0034035}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &6692427419161046933
 GameObject:
@@ -257,7 +257,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -268,7 +268,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.625, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &-7035543462264330740
 MonoBehaviour:
@@ -448,13 +448,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5773dba2667214b41a424dd01f0d1fd9, type: 3}
---- !u!198 &7244421312047367813 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7636407915201888682, guid: 5773dba2667214b41a424dd01f0d1fd9, type: 3}
-  m_PrefabInstance: {fileID: 968452345212782383}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9219417863185604593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8250966108540819678, guid: 5773dba2667214b41a424dd01f0d1fd9, type: 3}
+  m_PrefabInstance: {fileID: 968452345212782383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7244421312047367813 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7636407915201888682, guid: 5773dba2667214b41a424dd01f0d1fd9, type: 3}
   m_PrefabInstance: {fileID: 968452345212782383}
   m_PrefabAsset: {fileID: 0}

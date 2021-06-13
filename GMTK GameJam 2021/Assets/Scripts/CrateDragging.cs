@@ -12,7 +12,7 @@ public class CrateDragging : MonoBehaviour
     
     public LayerMask interactableLayers;
     private ContactFilter2D interactableFilter;
-    bool isGrabbing = false;
+    public bool isGrabbing = false;
     GameObject grabbedObject;
     void Start()
     {
