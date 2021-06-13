@@ -17,7 +17,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 1 && !marked)
+        if (SceneManager.GetActiveScene().buildIndex == 1 && !marked)
         {
             DontDestroyOnLoad(gameObject);
             marked = true;
