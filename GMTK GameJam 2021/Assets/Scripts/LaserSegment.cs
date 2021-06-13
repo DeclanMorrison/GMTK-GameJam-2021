@@ -32,7 +32,7 @@ public class LaserSegment : MonoBehaviour
             Draw2DRay(transform.position, hit2D.point);
             // If we have any children lasers
             if (childLaser != null){
-                // Make sure we should still have children lasers (i.e. target is reflective)
+                // Make sure we should still have children lasers (i.e. target is reflective or target is portal)
                 Reflective reflective = hit2D.collider.gameObject.GetComponent<Reflective>();
                 if (reflective) {
                     // Adjust position
@@ -43,10 +43,16 @@ public class LaserSegment : MonoBehaviour
                     Vector2 r = d - 2*Vector2.Dot(d, n)*n; // Equation for reflection
                     float angle = Mathf.Atan2(r.y, r.x) * Mathf.Rad2Deg;
                     childLaser.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+                // What about portals
+                } else if (hit2D.collider.tag == "Portal") {
+                    CircleCollider2D circleCast = (CircleCollider2D) hit2D.collider;
+                    childLaser.transform.position = laserOffsetPoint + (hit2D.point - pos).normalized * 2.2f * circleCast.radius;
                 } else {
                     // Delete child
+                    Debug.Log("Destroying for no hittty");
                     Destroy(childLaser.gameObject);
                 }
+
             } else {
                 // Instantiate new children
                 Reflective reflective = hit2D.collider.gameObject.GetComponent<Reflective>();
@@ -61,6 +67,20 @@ public class LaserSegment : MonoBehaviour
                     laserChild.transform.parent = transform;
                     laserChild.layer = gameObject.layer;
                     childLaser = laserChild.GetComponent<LaserSegment>();
+                } else if (hit2D.collider.tag == "Portal") {
+                    CircleCollider2D circleCast = (CircleCollider2D) hit2D.collider;
+                    Vector2 spawnPoint = laserOffsetPoint + (hit2D.point - pos).normalized * 2.2f * circleCast.radius;
+                    GameObject laserChild = Instantiate(laserPrefab, spawnPoint, transform.rotation);
+                    laserChild.transform.parent = transform;
+                    childLaser = laserChild.GetComponent<LaserSegment>();
+                    foreach (Transform child in hit2D.transform.parent)
+                    {
+                        if (child.gameObject.layer != gameObject.layer)
+                        {
+                            laserChild.layer = child.gameObject.layer;
+                            break;
+                        }
+                    }
                 }
             }
         }
