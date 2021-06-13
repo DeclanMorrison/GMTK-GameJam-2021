@@ -562,8 +562,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae68590cbdb95443811bb3d187bc464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  allSoundEffects: []
+  source: {fileID: 8704398286807043717}
+  allSoundEffects:
+  - name: PlayerDeath
+    clips:
+    - {fileID: 8300000, guid: 1e0109ef059bf8d4a9bdc840b33b6a22, type: 3}
+    - {fileID: 8300000, guid: 38b2cfa139396b44792a904d1ac88ed8, type: 3}
+    - {fileID: 8300000, guid: 3507888eb87b334488263b1d7d663bb5, type: 3}
+    - {fileID: 8300000, guid: 01ff8324b3e415d4893fca5e0450ec77, type: 3}
+    - {fileID: 8300000, guid: 3351163c6028c7a499f43814e5066fb2, type: 3}
+    volume: 1
 --- !u!82 &8704398286807043717
 AudioSource:
   m_ObjectHideFlags: 0

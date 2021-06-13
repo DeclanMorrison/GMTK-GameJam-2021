@@ -72,6 +72,10 @@ public class PlayerLogic : MonoBehaviour
         anim.SetBool("isGrabbing", isGrabbing);
         anim.SetBool("isWalking", inputs != Vector2.zero);
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SoundEffectManager.instance.Play("PlayerDeath");
+        }
 
         //Sound
         if (isGrabbing && inputs != Vector2.zero) {
@@ -171,6 +175,7 @@ public class PlayerLogic : MonoBehaviour
     public void OnHitByLaser()
     {
         GameManager.instance.GlitchToDeath();
+        //SoundEffectManager.instance.Play("PlayerDeath");
     }
 
 }
