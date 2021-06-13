@@ -5376,6 +5376,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3557054167658754479, guid: 7b320c30815a84044a219817b06b2185, type: 3}
+      propertyPath: requiredInputs
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557054167658754479, guid: 7b320c30815a84044a219817b06b2185, type: 3}
       propertyPath: requiredButtons.Array.size
       value: 2
       objectReference: {fileID: 0}

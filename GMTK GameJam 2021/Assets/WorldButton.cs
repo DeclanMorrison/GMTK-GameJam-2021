@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class WorldButton : MonoBehaviour
 {
-    public UnityEvent<bool> OnStateChange = new UnityEvent<bool>();
+    public UnityEvent<bool,GameObject> OnStateChange = new UnityEvent<bool, GameObject>();
  
     private LayerMask interactableLayers;
     private ContactFilter2D interactableFilter;
@@ -30,16 +30,9 @@ public class WorldButton : MonoBehaviour
 
         if(pressed != lastFramePressed)
         {
-            OnStateChange.Invoke(pressed);
-            
-            if (pressed)
-            {
-                sr.sprite = pressedSprite;
-            }
-            else
-            {
-                sr.sprite = unPressedSprite;
-            }
+            OnStateChange.Invoke(pressed, gameObject);
+            if (pressed){sr.sprite = pressedSprite;}
+            else{sr.sprite = unPressedSprite;}
         }
 
         lastFramePressed = pressed;

@@ -5,19 +5,15 @@ using System;
 
 public class Doors : MonoBehaviour
 {
-    public bool allButtonsRequired = true;
     [HideInInspector] public bool open;
     private Animator anim;
     public Collider2D doorColider;
-    public List<WorldButton> requiredButtons;
+    public float requiredInputs = 1;
+    private List<GameObject> activeInputs = new List<GameObject>();
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-    }
-    void Update()
-    {
-        if(requiredButtons.Count != 0) { SetState(checkRequiredButtons()); }
     }
 
     void SetState(bool open)
@@ -35,30 +31,20 @@ public class Doors : MonoBehaviour
             doorColider.enabled = true;
         }
     }
-    bool checkRequiredButtons()
+
+    public void InputActivity(bool state, GameObject gameObject)
     {
-        if (allButtonsRequired)
+        if(state == true) // the input just turned on
         {
-            foreach (WorldButton button in requiredButtons)
-            {
-                if (!button.pressed)
-                {
-                    return false;
-                }
-            }
-            return true;
+            if (activeInputs.Contains(gameObject)) { return; }
+            activeInputs.Add(gameObject);
         }
-        else
+        else //the input just shut off
         {
-            foreach (WorldButton button in requiredButtons)
-            {
-                if (button.pressed)
-                {
-                    return true;
-                }
-            }
-            return false;
+            if (!activeInputs.Contains(gameObject)){return;}
+            activeInputs.Remove(gameObject);
         }
+        SetState(activeInputs.Count >= requiredInputs);
     }
 
 }
