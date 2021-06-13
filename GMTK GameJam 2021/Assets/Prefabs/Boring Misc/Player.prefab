@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 6692427419161046938}
   - component: {fileID: 6692427419161046939}
   - component: {fileID: 6692427419161046932}
-  - component: {fileID: 6692427419161046937}
   - component: {fileID: 1387460388417291413}
   - component: {fileID: -7035543462264330740}
   - component: {fileID: 5683925550288189804}
@@ -227,18 +226,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6692427419161046937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6692427419161046933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232a9a94a05b8f045ac11f949a20a2b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1387460388417291413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4daaff2a01b3d4f8b8593e38c42c1662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleDensity: 15
   electricityParticles: {fileID: 7587066989502320167}
   otherElectricityParticles: {fileID: 7244421312047367813}
   otherPlayer: {fileID: 0}
