@@ -253,7 +253,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -306,8 +306,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.018689923, g: 0.20948245, b: 0.7924528, a: 1}
-      maxColor: {r: 0.2971698, g: 0.8493512, b: 1, a: 1}
+      minColor: {r: 0.4117647, g: 0.5882353, b: 0.93333334, a: 1}
+      maxColor: {r: 0.83137256, g: 0.94509804, b: 0.9764706, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -748,7 +748,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.94
     donutRadius: 0.2
     m_Position: {x: 0, y: 0.25, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -831,7 +831,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.5
+      value: 0.18
       mode: 0
       spread: 0
       speed:
@@ -5126,7 +5126,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5179,8 +5179,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.018689923, g: 0.20948245, b: 0.7924528, a: 1}
-      maxColor: {r: 0.2971698, g: 0.8493512, b: 1, a: 1}
+      minColor: {r: 0.4117647, g: 0.5882353, b: 0.93333334, a: 1}
+      maxColor: {r: 0.83137256, g: 0.94509804, b: 0.9764706, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5621,7 +5621,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.94
     donutRadius: 0.2
     m_Position: {x: 0, y: 0.25, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -5704,7 +5704,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.5
+      value: 0.18
       mode: 0
       spread: 0
       speed:
