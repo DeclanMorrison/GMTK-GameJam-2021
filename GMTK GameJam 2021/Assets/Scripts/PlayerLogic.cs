@@ -75,12 +75,12 @@ public class PlayerLogic : MonoBehaviour
 
         //Sound
         if (isGrabbing && inputs != Vector2.zero) {
-            if (draggingSound.isPlaying == false){draggingSound.Play(); Debug.Log("playing dragging");}
+            if (draggingSound.isPlaying == false){draggingSound.Play();}
         }
         else if (draggingSound.isPlaying == true) { draggingSound.Stop(); }
 
         if (inputs != Vector2.zero){
-            if (walkingSound.isPlaying == false){walkingSound.Play(); Debug.Log("playing dragging");}
+            if (walkingSound.isPlaying == false){walkingSound.Play();}
         }
         else if (walkingSound.isPlaying == true) { walkingSound.Stop(); }
     }
