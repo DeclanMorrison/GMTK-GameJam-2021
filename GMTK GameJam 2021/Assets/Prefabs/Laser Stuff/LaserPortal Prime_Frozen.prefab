@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5184678588003417302}
   m_Layer: 0
-  m_Name: LaserPortal Prime_Overgrowth
+  m_Name: LaserPortal Prime_Frozen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 5184678588176278297}
   - component: {fileID: 5184678588176278302}
   - component: {fileID: 5184678588176278303}
-  m_Layer: 8
-  m_Name: Laser Portal Overgrowth
+  m_Layer: 7
+  m_Name: Laser Portal Frozen
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,8 +306,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.09158064, g: 0.3962264, b: 0.13761179, a: 1}
-      maxColor: {r: 0.020425411, g: 0.4811321, b: 0.039015345, a: 1}
+      minColor: {r: 0.018689923, g: 0.20948245, b: 0.7924528, a: 1}
+      maxColor: {r: 0.2971698, g: 0.8493512, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5179,8 +5179,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.09158064, g: 0.3962264, b: 0.13761179, a: 1}
-      maxColor: {r: 0.020425411, g: 0.4811321, b: 0.039015345, a: 1}
+      minColor: {r: 0.018689923, g: 0.20948245, b: 0.7924528, a: 1}
+      maxColor: {r: 0.2971698, g: 0.8493512, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
