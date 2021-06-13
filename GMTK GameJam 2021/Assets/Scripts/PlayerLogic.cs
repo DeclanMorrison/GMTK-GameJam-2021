@@ -2,28 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrateDragging : MonoBehaviour
+public class PlayerLogic : MonoBehaviour
 {
     // Start is called before the first frame update
     public KeyCode grabKey;
     public Collider2D leftCollider;
     public Collider2D rightCollider;
-    PlayerMovement playerMovement;
-    
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private Animator anim;
+
+    public string inputX = "P1X";
+    public string inputY = "P1Y";
+    private bool facingRight = true;
+    public float maxSpeed = 5;
+
     public LayerMask interactableLayers;
     private ContactFilter2D interactableFilter;
-    public bool isGrabbing = false;
+    bool isGrabbing = false;
     GameObject grabbedObject;
+ 
+    private Vector2 moveDir
+    {
+        get
+        {
+            return new Vector2(Mathf.Sign(rb.velocity.x), Mathf.Sign(rb.velocity.x));
+        }
+    }
     void Start()
     {
-        playerMovement = GetComponentInParent<PlayerMovement>();
         interactableFilter.SetLayerMask(interactableLayers);
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Make sure we can only interact with current dimension
+        //Grabbing
         interactableLayers = (1 << gameObject.layer);
         interactableFilter.SetLayerMask(interactableLayers);
         if (!isGrabbing)
@@ -40,11 +58,34 @@ public class CrateDragging : MonoBehaviour
                 DropGrabbed();
             }
         }
-    }
 
+        //Movement
+        Vector2 inputs = new Vector2(Input.GetAxisRaw(inputX), Input.GetAxisRaw(inputY)).normalized;
+        rb.velocity = inputs * maxSpeed;
+
+        UpdatePlayerFlip(inputs);
+
+        //Animations
+        anim.SetBool("isGrabbing", isGrabbing);
+        anim.SetBool("isWalking", inputs != Vector2.zero);
+    }
+    void UpdatePlayerFlip(Vector2 inputs)
+    {
+        if (isGrabbing) { return; }
+        if (inputs.x > 0)
+        {
+            sr.flipX = false;
+            facingRight = true;
+        }
+        else if (inputs.x < 0)
+        {
+            sr.flipX = true;
+            facingRight = false;
+        }
+    }
     void CheckPickup()
     {
-        Collider2D collider = playerMovement.facingRight ? rightCollider : leftCollider;
+        Collider2D collider = facingRight ? rightCollider : leftCollider;
         Collider2D [] collisions = new Collider2D[10];
         int numCollisions = Physics2D.OverlapCollider(collider, interactableFilter, collisions);
         foreach (Collider2D collision in collisions)
@@ -111,4 +152,10 @@ public class CrateDragging : MonoBehaviour
         }
         return false;
     }
+
+    public void OnHitByLaser()
+    {
+        GameManager.instance.GlitchToDeath();
+    }
+
 }

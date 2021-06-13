@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject frozenPlayer;
+    private bool frozenPlayerFinished = false;
     public GameObject overgrowthPlayer;
+    private bool overgrowthPlayerFinished = false;
 
     public float splitDistance = 1f;
 
@@ -38,6 +41,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
         CheckSplit();
     }
 
@@ -150,4 +156,83 @@ public class GameManager : MonoBehaviour
         // Set new superposition state
         superPositionState = SuperPositionState.TOGETHER;
     }
+
+    public void GlitchToDeath()
+    {
+        StartCoroutine("RestartGame");
+    }
+
+    public void PlayerFinished(GameObject player, bool finished)
+    {
+        if (player == overgrowthPlayer)
+        {
+            overgrowthPlayerFinished = finished;    
+        }
+        else
+        {
+            frozenPlayerFinished = finished;
+        }
+        if (frozenPlayerFinished && overgrowthPlayerFinished)
+        {
+            StartCoroutine("LoadNextScene");
+        }
+    }
+
+    IEnumerator RestartGame() {
+        glitchingSound.Play();
+        // Glitching Effect
+        foreach (GlitchEffects glitch in glitches) 
+        {
+            glitch.enabled = true;
+        }
+    
+        for (float ft = 0f; ft <= 5; ft += 0.1f)
+        {
+            foreach (GlitchEffects glitch in glitches) 
+            {
+                glitch.colorIntensity = ft;
+                glitch.flipIntensity = ft;
+            }
+            yield return new WaitForSeconds(.00001f);
+        }
+        foreach (GlitchEffects glitch in glitches) 
+        {
+            glitch.colorIntensity = 0;
+            glitch.flipIntensity = 0;
+            glitch.enabled = false;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ManualNextScene() 
+    {
+        StartCoroutine("LoadNextScene");
+    }
+
+    IEnumerator LoadNextScene() {
+        glitchingSound.Play();
+        // Glitching Effect
+        foreach (GlitchEffects glitch in glitches) 
+        {
+            glitch.enabled = true;
+        }
+    
+        for (float ft = 0f; ft <= 5; ft += 0.1f)
+        {
+            foreach (GlitchEffects glitch in glitches) 
+            {
+                glitch.colorIntensity = ft;
+                glitch.flipIntensity = ft;
+            }
+            yield return new WaitForSeconds(.00001f);
+        }
+        foreach (GlitchEffects glitch in glitches) 
+        {
+            glitch.colorIntensity = 0;
+            glitch.flipIntensity = 0;
+            glitch.enabled = false;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
 }
