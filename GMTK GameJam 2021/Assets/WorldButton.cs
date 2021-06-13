@@ -7,7 +7,7 @@ public class WorldButton : MonoBehaviour
 {
     public UnityEvent<bool> OnStateChange = new UnityEvent<bool>();
  
-    public LayerMask interactableLayers;
+    private LayerMask interactableLayers;
     private ContactFilter2D interactableFilter;
     public Collider2D detectionField;
     public bool pressed = false;
@@ -19,6 +19,7 @@ public class WorldButton : MonoBehaviour
 
     private void Start()
     {
+        interactableLayers = (1 << gameObject.layer);
         interactableFilter.SetLayerMask(interactableLayers);
         sr = GetComponent<SpriteRenderer>();
         sr.sprite = unPressedSprite;

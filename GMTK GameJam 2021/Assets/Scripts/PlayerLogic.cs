@@ -21,8 +21,7 @@ public class PlayerLogic : MonoBehaviour
     private ContactFilter2D interactableFilter;
     bool isGrabbing = false;
     GameObject grabbedObject;
-    
-
+ 
     private Vector2 moveDir
     {
         get

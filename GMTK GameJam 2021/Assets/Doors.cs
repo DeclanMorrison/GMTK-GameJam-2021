@@ -5,7 +5,8 @@ using System;
 
 public class Doors : MonoBehaviour
 {
-    public bool open;
+    public bool allButtonsRequired = true;
+    [HideInInspector] public bool open;
     private Animator anim;
     public Collider2D doorColider;
     public List<WorldButton> requiredButtons;
@@ -36,14 +37,28 @@ public class Doors : MonoBehaviour
     }
     bool checkRequiredButtons()
     {
-        foreach (WorldButton button in requiredButtons)
+        if (allButtonsRequired)
         {
-            if (!button.pressed)
+            foreach (WorldButton button in requiredButtons)
             {
-                return false;
+                if (!button.pressed)
+                {
+                    return false;
+                }
             }
+            return true;
         }
-        return true;
+        else
+        {
+            foreach (WorldButton button in requiredButtons)
+            {
+                if (button.pressed)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
 }
