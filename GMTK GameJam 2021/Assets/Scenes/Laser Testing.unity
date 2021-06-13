@@ -6536,6 +6536,14 @@ PrefabInstance:
       value: Laser Emitter
       objectReference: {fileID: 0}
     - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
+      propertyPath: m_Parameters.alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
+      propertyPath: m_Parameters.textureMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
       propertyPath: m_Positions.Array.data[0].x
       value: -6.61
       objectReference: {fileID: 0}
