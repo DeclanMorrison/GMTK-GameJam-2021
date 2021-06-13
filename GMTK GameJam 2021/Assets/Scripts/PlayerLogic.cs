@@ -21,7 +21,10 @@ public class PlayerLogic : MonoBehaviour
     private ContactFilter2D interactableFilter;
     bool isGrabbing = false;
     GameObject grabbedObject;
- 
+
+    public AudioSource walkingSound;
+    public AudioSource draggingSound;
+
     private Vector2 moveDir
     {
         get
@@ -68,6 +71,18 @@ public class PlayerLogic : MonoBehaviour
         //Animations
         anim.SetBool("isGrabbing", isGrabbing);
         anim.SetBool("isWalking", inputs != Vector2.zero);
+
+
+        //Sound
+        if (isGrabbing && inputs != Vector2.zero) {
+            if (draggingSound.isPlaying == false){draggingSound.Play();}
+        }
+        else if (draggingSound.isPlaying == true) { draggingSound.Stop(); }
+
+        if (inputs != Vector2.zero){
+            if (walkingSound.isPlaying == false){walkingSound.Play();}
+        }
+        else if (walkingSound.isPlaying == true) { walkingSound.Stop(); }
     }
     void UpdatePlayerFlip(Vector2 inputs)
     {
