@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5184678588003417302, guid: cd86b3adc03839129beac659d75ebfc6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5184678588003417302, guid: cd86b3adc03839129beac659d75ebfc6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6535,6 +6535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser Emitter
       objectReference: {fileID: 0}
+    - target: {fileID: 6339589300367800540, guid: c213d78129cac373699fe3a098989dd7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
       propertyPath: m_Parameters.alignment
       value: 1
@@ -6557,11 +6561,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
       propertyPath: m_Positions.Array.data[1].y
-      value: -1.3839147
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
       propertyPath: m_Positions.Array.data[1].z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.0030441284
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339589300367800541, guid: c213d78129cac373699fe3a098989dd7, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c213d78129cac373699fe3a098989dd7, type: 3}
