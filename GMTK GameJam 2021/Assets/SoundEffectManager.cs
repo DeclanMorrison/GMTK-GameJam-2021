@@ -19,13 +19,19 @@ public class SoundEffectManager : MonoBehaviour
 
     public void Play(string name)
     {
+        bool effectFound = false;
         foreach(SoundEffect se in allSoundEffects)
         {
             if(name == se.name)
             {
                 source.PlayOneShot(se.clips[UnityEngine.Random.Range(0, se.clips.Length)], se.volume);
+                effectFound = true;
                 continue;
             }
+        }
+        if(effectFound == false)
+        {
+            Debug.Log("Couldn't find clip: " + name);
         }
     }
 
