@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ElectricityRotation : MonoBehaviour
 {
-
+    public float particleDensity = 15;
     public ParticleSystem electricityParticles;
     public ParticleSystem otherElectricityParticles;
     public GameObject otherPlayer;
@@ -27,8 +27,8 @@ public class ElectricityRotation : MonoBehaviour
 
         var particleSystem = electricityParticles.main;
         var otherParticleSystem = otherElectricityParticles.main;
-        particleSystem.maxParticles = (int)MapDistanceToParticleCount(distance.magnitude, 15, 10, 0, 15);
-        otherParticleSystem.maxParticles = (int)MapDistanceToParticleCount(distance.magnitude, 15, 10, 0, 15);
+        particleSystem.maxParticles = (int)MapDistanceToParticleCount(distance.magnitude, 15, 10, 0, particleDensity);
+        otherParticleSystem.maxParticles = (int)MapDistanceToParticleCount(distance.magnitude, 15, 10, 0, particleDensity);
     }
 
     float MapDistanceToParticleCount(float value, float from1, float to1, float from2, float to2)

@@ -201,6 +201,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void ManualNextScene() 
+    {
+        StartCoroutine("LoadNextScene");
+    }
+
     IEnumerator LoadNextScene() {
         glitchingSound.Play();
         // Glitching Effect
