@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dragable
   - Portal
+  - Music
   layers:
   - Default
   - TransparentFX
