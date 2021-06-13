@@ -24,7 +24,7 @@ public class LaserSegment : MonoBehaviour
 
     void RenderLaser()
     {
-        RaycastHit2D hit2D = Physics2D.Raycast(transform.position, transform.right, distanceRay, interactableLayers);
+        RaycastHit2D hit2D = Physics2D.Raycast(transform.position, transform.right, distanceRay, interactableLayers, -5);
         Vector2 pos = transform.position;
         Vector2 laserOffsetPoint = pos + (hit2D.point - pos) * ((hit2D.point - pos).magnitude - 0.05f) / (hit2D.point - pos).magnitude;
         if (hit2D)

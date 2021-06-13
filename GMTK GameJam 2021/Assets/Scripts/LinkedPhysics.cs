@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LinkedPhysics : MonoBehaviour
 {
-    public Transform primeObject;
-    public Transform splitObject;
+    public Collider2D primeObject;
+    public Collider2D splitObject;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +17,13 @@ public class LinkedPhysics : MonoBehaviour
     {
         if (GameManager.instance.superPositionState == SuperPositionState.TOGETHER)
         {
-            splitObject.position = primeObject.position;
+            primeObject.enabled = true;
+            splitObject.enabled = false;
         }
         else
         {
-            primeObject.position = splitObject.position;
+            primeObject.enabled = false;
+            splitObject.enabled = true;
         } 
     }
 }
