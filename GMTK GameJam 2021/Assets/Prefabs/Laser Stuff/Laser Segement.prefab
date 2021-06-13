@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 7134888028860162800}
   distanceRay: 100
+  childLaser: {fileID: 0}
 --- !u!120 &7134888028860162806
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9f598d46306d164d87b3d82a6b1e6c3, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
