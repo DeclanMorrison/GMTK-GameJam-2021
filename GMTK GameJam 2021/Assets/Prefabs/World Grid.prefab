@@ -5405,6 +5405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5694893512462707829, guid: 4b197c6b051a06f4e9ae611c3863cf41, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5694893512462707830, guid: 4b197c6b051a06f4e9ae611c3863cf41, type: 3}
       propertyPath: m_RootOrder
       value: 3
